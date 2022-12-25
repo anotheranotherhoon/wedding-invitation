@@ -7,6 +7,6 @@ module.exports = nextConfig
 
 module.exports = {
   images: {
-    domains: ['m.bomtvcard.com'],
+    domains: ['m.bomtvcard.com', 'drive.google.com'],
   },
 }

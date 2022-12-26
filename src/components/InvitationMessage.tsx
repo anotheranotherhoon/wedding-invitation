@@ -43,6 +43,7 @@ const InvitationMessage = ({brid_dad, brid_mom, groom_dad, groom_mom, brid_name,
 
 const AutoHeightImageWrapper = styled.section`
   width:100%;
+  position: relative;
   & > span {
     position : unset !important;
     & .autoImage {
@@ -55,9 +56,12 @@ const AutoHeightImageWrapper = styled.section`
 const StyledSection = styled.section`
   margin : 10px 0;
   text-align:center;
+  div{
+    padding: 6px 0;
+  }
 `
 const BoldSpan = styled.span`
-  font-weight: bold;
+  font-weight: bolder;
 `
 
 export default InvitationMessage

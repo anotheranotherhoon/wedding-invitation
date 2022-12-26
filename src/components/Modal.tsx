@@ -34,7 +34,7 @@ const Modal = ({ bankState, accountNumberState, nameState, closeModal }: IModalP
       <Background ref={modalRef} onClick={cllickBackground} />
       <ModalBox>
         <div>{bankState}</div>
-        <div>{accountNumberState}</div>
+        <div className='info'>{accountNumberState}</div>
         <div>예금주 : {nameState}</div>
         <div>{copyMessage}</div>
         <EventWrapper>
@@ -47,7 +47,7 @@ const Modal = ({ bankState, accountNumberState, nameState, closeModal }: IModalP
   )
 }
 const Container = styled.div`
-    font-size: 2rem;
+    font-size: 20px;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -87,6 +87,9 @@ const ModalBox = styled.section`
   background-color: var(--color-white);
   border-radius: 5px;
   padding: 20px;
+  .info{
+    margin: 10px 0;
+  }
 `
 
 const EventWrapper = styled.div`
@@ -94,6 +97,7 @@ const EventWrapper = styled.div`
   text-align:center;
   width:100%;
   border-radius: 30px;
+  font-size: 15px;
   .copy{
     background-color: #1B1C1D;
     color: white;

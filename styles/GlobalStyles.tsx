@@ -17,9 +17,10 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
     box-sizing: border-box;
     color: var(--color-black);
-    background-color:var(--color-coral);
+    background-color:var(--color-white);
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
   }
   body {
-    font-family: 'Noto Serif KR', serif;
   }
 `;

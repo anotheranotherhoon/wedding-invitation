@@ -16,31 +16,13 @@ interface IProps {
   img : string;
 }
 
-const Home = (props : any) => {
+const Home = () => {
   const { data, error } = useSWR('/api/staticdata', fetcher);
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
   const weddingData = JSON.parse(data)
   return (
     <Layout>
-      <Head>
-        <title>김현기❤️이향정</title>
-        <link rel='icon' href='/favicon.ico' />
-        <title>{props.title}</title>
-      </Head>
-      <NextSeo
-        title={props.title}
-        description={props.title}
-        canonical={props.url}
-        openGraph={{
-          type: 'website',
-          url: `${props.url}`,
-          title: `${props.title}`,
-          description: `${props.title}`,
-          images: [{ url: `${props.img}` }],
-          site_name: `${props.title}`,
-        }}
-      />
       <WelcomePage />
       <Info date={weddingData.weddingDate} time={weddingData.time} place={weddingData.place} hall_name={weddingData.hall_name} />
       <InvitationMessage brid_dad={weddingData.parents_info.brid_parents.dad.name} brid_mom={weddingData.parents_info.brid_parents.mom.name} groom_dad={weddingData.parents_info.groom_parents.dad.name} groom_mom={weddingData.parents_info.groom_parents.mom.name} brid_name={weddingData.client.brid.name} groom_name={weddingData.client.groom.name} brid_rank={weddingData.client.brid.rank} groom_rank={weddingData.client.groom.rank} />
@@ -77,15 +59,6 @@ const Layout = styled.div`
         align-items:center;
         `
 
-export const getStaticProps = () => {
-  return{
-    props : {
-      title : '김현기❤️이향정',
-      url : 'https://wedding-invitation-alpha-three.vercel.app/',
-      img : 'http://m.bomtvcard.com/data/1662021003952/crop_PP_221027_212528_674815002JXhTx.jpg'
-    }
-  }
-}
 
 
 export default Home

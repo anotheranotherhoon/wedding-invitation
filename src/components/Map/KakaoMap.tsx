@@ -8,7 +8,7 @@ const KakaoMap = () => {
   useEffect(()=>{
     const script = document.createElement('script');
     script.async = true;
-    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=47d3f3c1fe507b0de68c2e8f6a3b24eb&autoload=false`
+    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAOMAP_KEY}&autoload=false`
     document.head.appendChild(script)
     script.addEventListener('load', ()=>{
       window.kakao.maps.load(()=>{
@@ -35,8 +35,8 @@ const KakaoMap = () => {
   }
 
 const StyledMap = styled.section`
-  height: 200px;
-  width:400px;
+  height: 150px;
+  width:350px;
   text-align : center;
   #marker{
     width: 100%;

@@ -88,6 +88,7 @@ const ModalBox = styled.section`
   background-color: var(--color-white);
   border-radius: 5px;
   padding: 20px;
+  font-size: 15px;
 `
 
 

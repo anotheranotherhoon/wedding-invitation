@@ -4,7 +4,6 @@ import { Carousel } from 'react-responsive-carousel';
 import Image from "next/image";
 
 const CarouselPage = ({ img }: any) => {
-  console.log(img)
   return (
     <CardLayout>
       <Carousel>

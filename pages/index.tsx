@@ -7,6 +7,7 @@ import Head from 'next/head'
 import InvitationMessage from '../src/components/InvitationMessage'
 import useSWR from 'swr'; 
 import Carousel from '../src/Carousel'
+import { NextSeo } from 'next-seo';
 const fetcher = (url : string) => fetch(url).then((res) => res.json());
 const Home = () => {
   const { data, error } = useSWR('/api/staticdata', fetcher);
@@ -18,17 +19,20 @@ const Home = () => {
       <Head>
         <title>김현기❤️이향정</title>
         <link rel='icon' href='/favicon.ico' />
-        <meta name="description" content="Checkout our cool page" key="desc" />
-        <meta property="og:title" content="김현기❤️이향정 결혼합니다." />
-        <meta
-          property="og:description"
-          content="김현기❤️이향정 결혼합니다."
-        />
-        <meta
-          property="og:image"
-          content='http://m.bomtvcard.com/data/1662021003952/crop_PP_221027_212528_674815002JXhTx.jpg'
-        />
         </Head>
+        <NextSeo
+        title='김현기❤️이향정'
+        description='김현기❤️이향정'
+        canonical="https://wedding-invitation-alpha-three.vercel.app/"
+        openGraph={{
+          type: 'website',
+          url: `https://wedding-invitation-alpha-three.vercel.app/`,
+          title: `김현기❤️이향정`,
+          description: '김현기❤️이향정',
+          images: [{ url:'http://m.bomtvcard.com/data/1662021003952/crop_PP_221027_212528_674815002JXhTx.jpg' }],
+          site_name: '김현기❤️이향정',
+        }}
+      />
           <WelcomePage />
           <Info date={weddingData.weddingDate} time={weddingData.time} place={weddingData.place} hall_name={weddingData.hall_name}/>
           <InvitationMessage brid_dad={weddingData.parents_info.brid_parents.dad.name} brid_mom={weddingData.parents_info.brid_parents.mom.name} groom_dad={weddingData.parents_info.groom_parents.dad.name} groom_mom={weddingData.parents_info.groom_parents.mom.name} brid_name={weddingData.client.brid.name} groom_name={weddingData.client.groom.name} brid_rank={weddingData.client.brid.rank} groom_rank={weddingData.client.groom.rank} />

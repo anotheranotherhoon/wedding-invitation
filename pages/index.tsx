@@ -27,11 +27,19 @@ const Home = (props : any) => {
         <title>김현기❤️이향정</title>
         <link rel='icon' href='/favicon.ico' />
         <title>{props.title}</title>
-        <meta name="description" content={props.title} />
-        <meta name="keywords" content={props.title} />
-        <meta property="og:title" content={`${props.title}`} />
-        <meta property="og:image" content={props.string} />
-        <meta property="og:description" content={props.title} />
+        <NextSeo
+        title={props.title}
+        description={props.title}
+        canonical={props.url}
+        openGraph={{
+          type: 'website',
+          url: `${props.url}`,
+          title: `${props.title}`,
+          description: `${props.title}`,
+          images: [{ url: `${props.img}` }],
+          site_name: `${props.title}`,
+        }}
+      />
       </Head>
       <WelcomePage />
       <Info date={weddingData.weddingDate} time={weddingData.time} place={weddingData.place} hall_name={weddingData.hall_name} />

@@ -38,6 +38,7 @@ const StyledMap = styled.section`
   height: 150px;
   width:350px;
   text-align : center;
+  margin-top: 20px;
   #marker{
     width: 100%;
     height:100%;

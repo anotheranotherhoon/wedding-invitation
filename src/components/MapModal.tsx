@@ -64,7 +64,8 @@ const Background = styled.div`
 
 const Title = styled.div`
   border-bottom :  2px dashed black;
-  padding:0;
+  margin-bottom: 10px;
+  padding:0 0 10px 0;
 `
 
 const MapSection = styled.section`

@@ -21,26 +21,18 @@ const Home = (props : any) => {
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
   const weddingData = JSON.parse(data)
-  console.log(props)
   return (
     <Layout>
       <Head>
         <title>김현기❤️이향정</title>
         <link rel='icon' href='/favicon.ico' />
+        <title>{props.title}</title>
+        <meta name="description" content={props.title} />
+        <meta name="keywords" content={props.title} />
+        <meta property="og:title" content={`${props.title}`} />
+        <meta property="og:image" content={props.string} />
+        <meta property="og:description" content={props.title} />
       </Head>
-      <NextSeo
-        title={props.title}
-        description={props.title}
-        canonical={props.url}
-        openGraph={{
-          type: 'website',
-          url: `${props.url}`,
-          title: `${props.title}`,
-          description: `${props.title}`,
-          images: [{ url: `${props.img}` }],
-          site_name: `${props.title}`,
-        }}
-      />
       <WelcomePage />
       <Info date={weddingData.weddingDate} time={weddingData.time} place={weddingData.place} hall_name={weddingData.hall_name} />
       <InvitationMessage brid_dad={weddingData.parents_info.brid_parents.dad.name} brid_mom={weddingData.parents_info.brid_parents.mom.name} groom_dad={weddingData.parents_info.groom_parents.dad.name} groom_mom={weddingData.parents_info.groom_parents.mom.name} brid_name={weddingData.client.brid.name} groom_name={weddingData.client.groom.name} brid_rank={weddingData.client.brid.rank} groom_rank={weddingData.client.groom.rank} />

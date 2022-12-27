@@ -48,6 +48,7 @@ const LeftSentence = styled.section`
   font-weight: bolder;
   width:30%;
   padding: 6px 0;
+  line-height: 22px;
   div{
     padding: 6px 0;
   }
@@ -55,6 +56,7 @@ const LeftSentence = styled.section`
 const RightBox = styled.section`
     width:70%;
     padding: 6px 0;
+    line-height: 27px;
     div{
     padding: 6px 0;
     font-weight: 500;

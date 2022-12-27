@@ -38,7 +38,6 @@ const AccountNumber = ({ brid_dad, brid_dad_bank, brid_dad_accountNumber, brid_m
           <RightBox>
             <div>비대면으로 축하해 주실 분들을 위해</div>
             <div>계좌번호를 남깁니다.</div>
-            <br />
             <div>축하해 주셔서</div>
             <div>진심으로 감사드립니다.</div>
           </RightBox>
@@ -55,19 +54,12 @@ const AccountNumber = ({ brid_dad, brid_dad_bank, brid_dad_accountNumber, brid_m
             </div>
             <div className="side role">신랑측 혼주</div>
             <div>
-              <span>{groom_mom}</span>
+              <span>{groom_mom} </span>
               <span>{groom_dad}</span>
               <BoxWrapper>
                 <NumberBox onClick={() => showModal(groom_dad_bank, groom_dad_accountNumber, groom_dad)}>계좌번호</NumberBox>
               </BoxWrapper>
             </div>
-            {/* <div>
-              <span className="role">어머니 </span>
-              <span>{groom_mom}</span>
-              <BoxWrapper>
-                <NumberBox onClick={() => showModal(groom_mom_bank, groom_mom_accountNumber, groom_mom)}>계좌번호</NumberBox>
-              </BoxWrapper>
-            </div> */}
           </GroomSection>
           <BridSection>
             <div>
@@ -125,10 +117,12 @@ const LeftBox = styled.div`
   width:25%;
   font-weight: bold;
   padding: 6px 0;
+  line-height: 22px;
 `
 const RightBox = styled.div`
   width:75%;
   padding: 6px 0;
+  line-height: 27px;
   div{
     padding: 6px 0;
   }
@@ -176,10 +170,10 @@ const KakaoBox = styled(ParentBox)`
 `
 
 const GroomSection = styled.section`
-  width: 87px;
+  width: 92px;
 `
 const BridSection = styled.section`
-  width: 87px;
+  width: 92px;
 `
 
 export default AccountNumber

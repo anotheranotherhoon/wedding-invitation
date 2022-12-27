@@ -87,10 +87,12 @@ const LeftBox = styled.div`
   width:30%;
   font-weight: bold;
   padding: 6px 0;
+  line-height: 22px;
 `
 const RightBox = styled.div`
   width:70%;
   padding: 6px 0;
+  line-height: 27px;
   div{
     padding: 6px 0;
   }

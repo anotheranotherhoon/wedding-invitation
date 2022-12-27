@@ -3,23 +3,15 @@ import WelcomePage from '../src/components/WelcomePage'
 import Info from '../src/components/Info'
 import SpecificInfo from '../src/components/SpecificInfo'
 import AccountNumber from '../src/components/AccountNumber'
-import Head from 'next/head'
 import InvitationMessage from '../src/components/InvitationMessage'
 import useSWR from 'swr';
 import Carousel from '../src/Carousel'
-import { NextSeo } from 'next-seo';
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
-interface IProps {
-  title : string;
-  url : string;
-  img : string;
-}
 
 const Home = () => {
   const { data, error } = useSWR('/api/staticdata', fetcher);
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  if (error) return <Layout>Failed to load</Layout>
+  if (!data) return <Layout>Loading...</Layout>
   const weddingData = JSON.parse(data)
   return (
     <Layout>

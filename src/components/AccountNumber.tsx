@@ -55,19 +55,19 @@ const AccountNumber = ({ brid_dad, brid_dad_bank, brid_dad_accountNumber, brid_m
             </div>
             <div className="side role">신랑측 혼주</div>
             <div>
-              <span className="role">아버지 </span>
+              <span>{groom_mom}</span>
               <span>{groom_dad}</span>
               <BoxWrapper>
                 <NumberBox onClick={() => showModal(groom_dad_bank, groom_dad_accountNumber, groom_dad)}>계좌번호</NumberBox>
               </BoxWrapper>
             </div>
-            <div>
+            {/* <div>
               <span className="role">어머니 </span>
               <span>{groom_mom}</span>
               <BoxWrapper>
                 <NumberBox onClick={() => showModal(groom_mom_bank, groom_mom_accountNumber, groom_mom)}>계좌번호</NumberBox>
               </BoxWrapper>
-            </div>
+            </div> */}
           </GroomSection>
           <BridSection>
             <div>
@@ -171,12 +171,15 @@ const KakaoBox = styled(ParentBox)`
   color : #504949;
   a{
     text-decoration: none;
+    color : #504949;
   }
 `
 
 const GroomSection = styled.section`
+  width: 87px;
 `
 const BridSection = styled.section`
+  width: 87px;
 `
 
 export default AccountNumber

@@ -9,11 +9,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     <GlobalStyles />
     <Head>
       <title>{'김현기❤️이향정'}</title>
-        <meta name="description" content={'김현기❤️이향정'} />
+        <meta name="description" content={'김현기❤️이향정 결혼합니다.'} />
         <meta name="keywords" content={'김현기❤️이향정'} />
-        <meta property="og:title" content={`${'김현기❤️이향정'}`} />
+        <meta property="og:title" content={`${'김현기❤️이향정 결혼합니다.'}`} />
         <meta property="og:image" content={'http://m.bomtvcard.com/data/1662021003952/crop_PP_221027_212528_674815002JXhTx.jpg'} />
-        <meta property="og:description" content={'김현기❤️이향정'} />
+        <meta property="og:description" content={'1월 15일 일요일 오후 2시 30분 '} />
         <link rel='icon' href='/favicon.ico' />
     </Head>
       <Component {...pageProps} />

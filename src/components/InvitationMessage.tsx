@@ -23,7 +23,7 @@ const InvitationMessage = ({brid_dad, brid_mom, groom_dad, groom_mom, brid_name,
       <StyledSection>
       <div>어색했던 첫 만남을 또렷이 기억합니다.</div>
       <div>웃는 모습이 유난히 사랑스러웠던 향정이</div>
-      <div>그 모습을 유난히도 좋아했던 형기</div>
+      <div>그 모습을 유난히도 좋아했던 현기</div>
       <br/>
       <div>이제는 언제나 함께 웃을 수 있는</div>
       <div>하나가 되려 합니다.</div>

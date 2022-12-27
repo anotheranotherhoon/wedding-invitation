@@ -6,6 +6,7 @@ import AccountNumber from '../src/components/AccountNumber'
 import Head from 'next/head'
 import InvitationMessage from '../src/components/InvitationMessage'
 import useSWR from 'swr'; 
+import Carousel from '../src/Carousel'
 const fetcher = (url : string) => fetch(url).then((res) => res.json());
 const Home = () => {
   const { data, error } = useSWR('/api/staticdata', fetcher);
@@ -16,10 +17,12 @@ const Home = () => {
     <Layout>
       <Head>
         <title>김현기❤️이향정</title>
+        <link rel='icon' href='/favicon.ico' />
         </Head>
           <WelcomePage />
           <Info date={weddingData.weddingDate} time={weddingData.time} place={weddingData.place} hall_name={weddingData.hall_name}/>
           <InvitationMessage brid_dad={weddingData.parents_info.brid_parents.dad.name} brid_mom={weddingData.parents_info.brid_parents.mom.name} groom_dad={weddingData.parents_info.groom_parents.dad.name} groom_mom={weddingData.parents_info.groom_parents.mom.name} brid_name={weddingData.client.brid.name} groom_name={weddingData.client.groom.name} brid_rank={weddingData.client.brid.rank} groom_rank={weddingData.client.groom.rank} />
+          <Carousel img={weddingData.img}/>
           <SpecificInfo date={weddingData.weddingDate} time={weddingData.time} address={weddingData.address} bus={weddingData.bus} subway={weddingData.subway} parking={weddingData.parkingLot} place={weddingData.place} hall_name={weddingData.hall_name} brid_name={weddingData.client.brid.name} groom_name={weddingData.client.groom.name} />
           <AccountNumber
             brid_dad={weddingData.parents_info.brid_parents.dad.name}

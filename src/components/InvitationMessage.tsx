@@ -35,7 +35,7 @@ const InvitationMessage = ({brid_dad, brid_mom, groom_dad, groom_mom, brid_name,
       <div>축복과 격려 주시면 감사하겠습니다.</div>
       <br/>
       <div><BoldSpan>{groom_dad}</BoldSpan> · <BoldSpan>{groom_mom}</BoldSpan>의 {groom_rank} {groom_name}</div>
-      <div><BoldSpan>{brid_dad}</BoldSpan> · <BoldSpan>{brid_mom}</BoldSpan>의 {brid_rank }{brid_name} </div>
+      <div><BoldSpan>{brid_dad}</BoldSpan> · <BoldSpan>{brid_mom}</BoldSpan>의 {brid_rank } {brid_name} </div>
       </StyledSection>
     </CardLayout>
   )

@@ -5,69 +5,87 @@ import SpecificInfo from '../src/components/SpecificInfo'
 import AccountNumber from '../src/components/AccountNumber'
 import Head from 'next/head'
 import InvitationMessage from '../src/components/InvitationMessage'
-import useSWR from 'swr'; 
+import useSWR from 'swr';
 import Carousel from '../src/Carousel'
 import { NextSeo } from 'next-seo';
-const fetcher = (url : string) => fetch(url).then((res) => res.json());
-const Home = () => {
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
+interface IProps {
+  title : string;
+  url : string;
+  img : string;
+}
+
+const Home = (props : any) => {
   const { data, error } = useSWR('/api/staticdata', fetcher);
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
-  const weddingData =   JSON.parse(data)
+  const weddingData = JSON.parse(data)
+  console.log(props)
   return (
     <Layout>
       <Head>
         <title>김현기❤️이향정</title>
         <link rel='icon' href='/favicon.ico' />
-        </Head>
-        <NextSeo
-        title='김현기❤️이향정'
-        description='김현기❤️이향정'
-        canonical="https://wedding-invitation-alpha-three.vercel.app/"
+      </Head>
+      <NextSeo
+        title={props.title}
+        description={props.title}
+        canonical={props.url}
         openGraph={{
           type: 'website',
-          url: `https://wedding-invitation-alpha-three.vercel.app/`,
-          title: `김현기❤️이향정`,
-          description: '김현기❤️이향정',
-          images: [{ url:'http://m.bomtvcard.com/data/1662021003952/crop_PP_221027_212528_674815002JXhTx.jpg' }],
-          site_name: '김현기❤️이향정',
+          url: `${props.url}`,
+          title: `${props.title}`,
+          description: `${props.title}`,
+          images: [{ url: `${props.img}` }],
+          site_name: `${props.title}`,
         }}
       />
-          <WelcomePage />
-          <Info date={weddingData.weddingDate} time={weddingData.time} place={weddingData.place} hall_name={weddingData.hall_name}/>
-          <InvitationMessage brid_dad={weddingData.parents_info.brid_parents.dad.name} brid_mom={weddingData.parents_info.brid_parents.mom.name} groom_dad={weddingData.parents_info.groom_parents.dad.name} groom_mom={weddingData.parents_info.groom_parents.mom.name} brid_name={weddingData.client.brid.name} groom_name={weddingData.client.groom.name} brid_rank={weddingData.client.brid.rank} groom_rank={weddingData.client.groom.rank} />
-          <Carousel img={weddingData.img}/>
-          <SpecificInfo date={weddingData.weddingDate} time={weddingData.time} address={weddingData.address} bus={weddingData.bus} subway={weddingData.subway} parking={weddingData.parkingLot} place={weddingData.place} hall_name={weddingData.hall_name} brid_name={weddingData.client.brid.name} groom_name={weddingData.client.groom.name} />
-          <AccountNumber
-            brid_dad={weddingData.parents_info.brid_parents.dad.name}
-            brid_dad_bank={weddingData.parents_info.brid_parents.dad.bank}
-            brid_dad_accountNumber={weddingData.parents_info.brid_parents.dad.accountNumber}
-            brid_mom={weddingData.parents_info.brid_parents.mom.name}
-            brid_mom_bank={weddingData.parents_info.brid_parents.mom.bank}
-            brid_mom_accountNumber={weddingData.parents_info.brid_parents.mom.accountNumber}
-            groom_dad={weddingData.parents_info.groom_parents.dad.name}
-            groom_dad_bank={weddingData.parents_info.groom_parents.dad.bank}
-            groom_dad_accountNumber={weddingData.parents_info.groom_parents.dad.accountNumber}
-            groom_mom={weddingData.parents_info.groom_parents.mom.name}
-            groom_mom_bank={weddingData.parents_info.groom_parents.mom.bank}
-            groom_mom_accountNumber={weddingData.parents_info.groom_parents.mom.accountNumber}
-            brid_name={weddingData.client.brid.name}
-            brid_bank={weddingData.client.brid.bank}
-            brid_accountNumber={weddingData.client.brid.accountNumber}
-            groom_name={weddingData.client.groom.name}
-            groom_bank={weddingData.client.groom.bank}
-            groom_accountNumber={weddingData.client.groom.accountNumber}
-          />
-        </Layout>
-        )
+      <WelcomePage />
+      <Info date={weddingData.weddingDate} time={weddingData.time} place={weddingData.place} hall_name={weddingData.hall_name} />
+      <InvitationMessage brid_dad={weddingData.parents_info.brid_parents.dad.name} brid_mom={weddingData.parents_info.brid_parents.mom.name} groom_dad={weddingData.parents_info.groom_parents.dad.name} groom_mom={weddingData.parents_info.groom_parents.mom.name} brid_name={weddingData.client.brid.name} groom_name={weddingData.client.groom.name} brid_rank={weddingData.client.brid.rank} groom_rank={weddingData.client.groom.rank} />
+      <Carousel img={weddingData.img} />
+      <SpecificInfo date={weddingData.weddingDate} time={weddingData.time} address={weddingData.address} bus={weddingData.bus} subway={weddingData.subway} parking={weddingData.parkingLot} place={weddingData.place} hall_name={weddingData.hall_name} brid_name={weddingData.client.brid.name} groom_name={weddingData.client.groom.name} />
+      <AccountNumber
+        brid_dad={weddingData.parents_info.brid_parents.dad.name}
+        brid_dad_bank={weddingData.parents_info.brid_parents.dad.bank}
+        brid_dad_accountNumber={weddingData.parents_info.brid_parents.dad.accountNumber}
+        brid_mom={weddingData.parents_info.brid_parents.mom.name}
+        brid_mom_bank={weddingData.parents_info.brid_parents.mom.bank}
+        brid_mom_accountNumber={weddingData.parents_info.brid_parents.mom.accountNumber}
+        groom_dad={weddingData.parents_info.groom_parents.dad.name}
+        groom_dad_bank={weddingData.parents_info.groom_parents.dad.bank}
+        groom_dad_accountNumber={weddingData.parents_info.groom_parents.dad.accountNumber}
+        groom_mom={weddingData.parents_info.groom_parents.mom.name}
+        groom_mom_bank={weddingData.parents_info.groom_parents.mom.bank}
+        groom_mom_accountNumber={weddingData.parents_info.groom_parents.mom.accountNumber}
+        brid_name={weddingData.client.brid.name}
+        brid_bank={weddingData.client.brid.bank}
+        brid_accountNumber={weddingData.client.brid.accountNumber}
+        groom_name={weddingData.client.groom.name}
+        groom_bank={weddingData.client.groom.bank}
+        groom_accountNumber={weddingData.client.groom.accountNumber}
+      />
+    </Layout>
+  )
 }
 
-        const Layout = styled.div`
+const Layout = styled.div`
         display:flex;
         flex-direction:column;
         justify-content:center;
         align-items:center;
         `
 
+export const getStaticProps = () => {
+  return{
+    props : {
+      title : '김현기❤️이향정',
+      url : 'https://wedding-invitation-alpha-three.vercel.app/',
+      img : 'http://m.bomtvcard.com/data/1662021003952/crop_PP_221027_212528_674815002JXhTx.jpg'
+    }
+  }
+}
 
-        export default Home
+
+export default Home

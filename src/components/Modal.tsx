@@ -20,16 +20,16 @@ const Modal = ({ bankState, accountNumberState, nameState, closeModal }: IModalP
     setCopyMessage('복사가 완료되었습니다.')
     setIsCopied(true)
   }
-  const doCopy = (text : string) => {
+  const doCopy = () => {
     if (navigator.clipboard) {
       navigator.clipboard
-        .writeText(text)
+        .writeText(accountNumberState)
         .then(() => {
           copyAccountNumber()
         })
     }else {
       const textarea = document.createElement("textarea");
-      textarea.value = text;
+      textarea.value = accountNumberState;
       textarea.style.left = "-999999px";
       textarea.style.top = "-999999px";
       textarea.style.position = "fixed";
@@ -53,7 +53,7 @@ const Modal = ({ bankState, accountNumberState, nameState, closeModal }: IModalP
         <div>예금주 : {nameState}</div>
         <div>{copyMessage}</div>
         <EventWrapper>
-          <button className="copy" onClick={()=>doCopy(accountNumberState)}>복사하기</button>
+          <button className="copy" onClick={doCopy}>복사하기</button>
           <button className="close"  onClick={closeModal}>닫기</button>
         </EventWrapper>
       </ModalBox>

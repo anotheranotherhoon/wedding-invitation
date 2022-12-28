@@ -5,6 +5,9 @@ import CardLayout from "./CardLayout"
 import MapModal from './MapModal'
 import moment from "moment";
 import 'react-calendar/dist/Calendar.css'
+import { useEffect, useState } from "react";
+import dayjs from 'dayjs';
+import { isoToTimeStamp } from "../../utils/convertDate";
 interface IProps {
   date: string;
   time : string;
@@ -18,9 +21,17 @@ interface IProps {
   groom_name : string;
 }
 
-const SpecificInfo = ({ date,time, address, bus, subway, parking, place, hall_name, brid_name, groom_name }: IProps) => {
+const SpecificInfo = ({ date, time, address, bus, subway, parking, place, hall_name, brid_name, groom_name }: IProps) => {
+  const [hydrated, setHydrated] = useState<boolean>(false)
   const Ddate = new Date(date)
   const { isMapModalOpen, showMapModal, closeMapModal } = useModalMap()
+  const DATE = isoToTimeStamp(date)
+  useEffect(()=>{
+    setHydrated(true)
+  },[])
+  if(!hydrated){
+    return null
+  }
   return (
     <CardLayout>
       <InfoWrapper>
@@ -40,7 +51,7 @@ const SpecificInfo = ({ date,time, address, bus, subway, parking, place, hall_na
               />
             </CalendarContainer>
             <>
-            <div>{date} {time}</div>
+            <div>{DATE} {time}</div>
             <div>{groom_name.slice(1)}♥{brid_name.slice(1)} 결혼식이 {moment(date).diff(moment(), 'days')}일 남았습니다.</div>
             </>
           </RightBox>
@@ -51,7 +62,7 @@ const SpecificInfo = ({ date,time, address, bus, subway, parking, place, hall_na
             <div>{place}</div>
             <div>{hall_name}</div>
             <div>{address}</div>
-            <div className="modal" onClick={showMapModal}>오시는길</div>
+            <div className="modal" onClick={showMapModal}>오시는 길</div>
           </RightBox>
         </ContentBox>
         <ContentBox>

@@ -53,8 +53,8 @@ const Modal = ({ bankState, accountNumberState, nameState, closeModal }: IModalP
         <div>예금주 : {nameState}</div>
         <div>{copyMessage}</div>
         <EventWrapper>
-          <div className="copy" onClick={()=>doCopy(accountNumberState)}>복사하기</div>
-          <div className="close"  onClick={closeModal}>닫기</div>
+          <button className="copy" onClick={()=>doCopy(accountNumberState)}>복사하기</button>
+          <button className="close"  onClick={closeModal}>닫기</button>
         </EventWrapper>
       </ModalBox>
     </Container>

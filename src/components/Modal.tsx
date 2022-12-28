@@ -28,17 +28,17 @@ const Modal = ({ bankState, accountNumberState, nameState, closeModal }: IModalP
           copyAccountNumber()
         })
     }else {
-      if (!document.queryCommandSupported("copy")) {
-        return alert("복사하기가 지원되지 않는 브라우저입니다.");
-      }
       const textarea = document.createElement("textarea");
       textarea.value = text;
+      textarea.style.left = "-999999px";
+      textarea.style.top = "-999999px";
       textarea.style.position = "fixed";
       document.body.appendChild(textarea);
       textarea.focus();
       textarea.select();
       document.execCommand("copy");
       document.body.removeChild(textarea);
+      textarea.remove();
       copyAccountNumber()
     }
 

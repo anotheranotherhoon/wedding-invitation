@@ -6,7 +6,6 @@ import MapModal from './MapModal'
 import moment from "moment";
 import 'react-calendar/dist/Calendar.css'
 import { useEffect, useState } from "react";
-import dayjs from 'dayjs';
 import { isoToTimeStamp } from "../../utils/convertDate";
 interface IProps {
   date: string;

@@ -4,41 +4,52 @@ import Info from '../src/components/Info'
 import SpecificInfo from '../src/components/SpecificInfo'
 import AccountNumber from '../src/components/AccountNumber'
 import InvitationMessage from '../src/components/InvitationMessage'
-import useSWR from 'swr';
 import Carousel from '../src/Carousel'
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
-const Home = () => {
-  const { data, error } = useSWR('/api/staticdata', fetcher);
-  if (error) return <Layout>Failed to load</Layout>
-  if (!data) return <Layout>Loading...</Layout>
-  const weddingData = JSON.parse(data)
+import { NextSeo } from 'next-seo'
+import path from 'path';
+import { promises as fs } from 'fs';
+import type {IData} from '../types/interface'
+const Home = (props : IData) => {
+  console.log(props)
   return (
     <Layout>
+      <NextSeo 
+      title={props.seo.title}
+      description={props.seo.description}
+      canonical={props.seo.url}
+      openGraph={{
+        type: "website",
+        url: `${props.seo.url}`,
+        title: `${props.seo.title}`,
+        description: `${props.seo.description}`,
+        images: [{ url:`${props.img[0].url}` }],
+        site_name: "wedding",
+      }}
+      />
       <WelcomePage />
-      <Info date={weddingData.weddingDate} time={weddingData.time} place={weddingData.place} hall_name={weddingData.hall_name} />
-      <InvitationMessage brid_dad={weddingData.parents_info.brid_parents.dad.name} brid_mom={weddingData.parents_info.brid_parents.mom.name} groom_dad={weddingData.parents_info.groom_parents.dad.name} groom_mom={weddingData.parents_info.groom_parents.mom.name} brid_name={weddingData.client.brid.name} groom_name={weddingData.client.groom.name} brid_rank={weddingData.client.brid.rank} groom_rank={weddingData.client.groom.rank} />
-      <Carousel img={weddingData.img} />
-      <SpecificInfo date={weddingData.weddingDate} time={weddingData.time} address={weddingData.address} bus={weddingData.bus} subway={weddingData.subway} parking={weddingData.parkingLot} place={weddingData.place} hall_name={weddingData.hall_name} brid_name={weddingData.client.brid.name} groom_name={weddingData.client.groom.name} />
+      <Info date={props.weddingDate} time={props.time} place={props.place} hall_name={props.hall_name} />
+      <InvitationMessage brid_dad={props.parents_info.brid_parents.dad.name} brid_mom={props.parents_info.brid_parents.mom.name} groom_dad={props.parents_info.groom_parents.dad.name} groom_mom={props.parents_info.groom_parents.mom.name} brid_name={props.client.brid.name} groom_name={props.client.groom.name} brid_rank={props.client.brid.rank} groom_rank={props.client.groom.rank} />
+      <Carousel img={props.img} />
+      <SpecificInfo date={props.weddingDate} time={props.time} address={props.address} bus={props.bus} subway={props.subway} parking={props.parkingLot} place={props.place} hall_name={props.hall_name} brid_name={props.client.brid.name} groom_name={props.client.groom.name} />
       <AccountNumber
-        brid_dad={weddingData.parents_info.brid_parents.dad.name}
-        brid_dad_bank={weddingData.parents_info.brid_parents.dad.bank}
-        brid_dad_accountNumber={weddingData.parents_info.brid_parents.dad.accountNumber}
-        brid_mom={weddingData.parents_info.brid_parents.mom.name}
-        brid_mom_bank={weddingData.parents_info.brid_parents.mom.bank}
-        brid_mom_accountNumber={weddingData.parents_info.brid_parents.mom.accountNumber}
-        groom_dad={weddingData.parents_info.groom_parents.dad.name}
-        groom_dad_bank={weddingData.parents_info.groom_parents.dad.bank}
-        groom_dad_accountNumber={weddingData.parents_info.groom_parents.dad.accountNumber}
-        groom_mom={weddingData.parents_info.groom_parents.mom.name}
-        groom_mom_bank={weddingData.parents_info.groom_parents.mom.bank}
-        groom_mom_accountNumber={weddingData.parents_info.groom_parents.mom.accountNumber}
-        brid_name={weddingData.client.brid.name}
-        brid_bank={weddingData.client.brid.bank}
-        brid_accountNumber={weddingData.client.brid.accountNumber}
-        groom_name={weddingData.client.groom.name}
-        groom_bank={weddingData.client.groom.bank}
-        groom_accountNumber={weddingData.client.groom.accountNumber}
+        brid_dad={props.parents_info.brid_parents.dad.name}
+        brid_dad_bank={props.parents_info.brid_parents.dad.bank}
+        brid_dad_accountNumber={props.parents_info.brid_parents.dad.accountNumber}
+        brid_mom={props.parents_info.brid_parents.mom.name}
+        brid_mom_bank={props.parents_info.brid_parents.mom.bank}
+        brid_mom_accountNumber={props.parents_info.brid_parents.mom.accountNumber}
+        groom_dad={props.parents_info.groom_parents.dad.name}
+        groom_dad_bank={props.parents_info.groom_parents.dad.bank}
+        groom_dad_accountNumber={props.parents_info.groom_parents.dad.accountNumber}
+        groom_mom={props.parents_info.groom_parents.mom.name}
+        groom_mom_bank={props.parents_info.groom_parents.mom.bank}
+        groom_mom_accountNumber={props.parents_info.groom_parents.mom.accountNumber}
+        brid_name={props.client.brid.name}
+        brid_bank={props.client.brid.bank}
+        brid_accountNumber={props.client.brid.accountNumber}
+        groom_name={props.client.groom.name}
+        groom_bank={props.client.groom.bank}
+        groom_accountNumber={props.client.groom.accountNumber}
       />
     </Layout>
   )
@@ -51,6 +62,15 @@ const Layout = styled.div`
         align-items:center;
         `
 
+
+export const getStaticProps = async() => {
+  const jsonDirectory = path.join(process.cwd(), 'json');
+  const fileContents = await fs.readFile(jsonDirectory + '/invitationData.json', 'utf8');
+  const objectData = JSON.parse(fileContents)
+  return {
+    props : objectData
+  }
+}
 
 
 export default Home

@@ -1,3 +1,4 @@
+import { text } from 'node:stream/consumers';
 import { useRef, useState } from 'react';
 import styled from 'styled-components'
 
@@ -21,7 +22,7 @@ const Modal = ({ bankState, accountNumberState, nameState, closeModal }: IModalP
     setIsCopied(true)
   }
   const doCopy = () => {
-    if (navigator.clipboard) {
+    if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard
         .writeText(accountNumberState)
         .then(() => {
@@ -36,10 +37,12 @@ const Modal = ({ bankState, accountNumberState, nameState, closeModal }: IModalP
       document.body.appendChild(textarea);
       textarea.focus();
       textarea.select();
-      document.execCommand("copy");
-      document.body.removeChild(textarea);
-      textarea.remove();
-      copyAccountNumber()
+      return new Promise((res :any, rej : any) => {
+        copyAccountNumber()
+        document.execCommand("copy") ? res() : rej()
+        textarea.remove()
+      })
+
     }
 
   };

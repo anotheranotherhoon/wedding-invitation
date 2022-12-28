@@ -9,10 +9,13 @@ import { NextSeo } from 'next-seo'
 import path from 'path';
 import { promises as fs } from 'fs';
 import type {IData} from '../types/interface'
+import Head from 'next/head'
 const Home = (props : IData) => {
-  console.log(props)
   return (
     <Layout>
+      <Head>
+        <title>{props.seo.title}</title>
+      </Head>
       <NextSeo 
       title={props.seo.title}
       description={props.seo.description}

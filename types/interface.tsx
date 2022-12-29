@@ -36,7 +36,8 @@ interface IPersonInfo {
 }
 
 interface IClientInfo extends IPersonInfo {
-  rank: string
+  rank: string;
+  kakaoPay : string;
 }
 
 interface IParents {

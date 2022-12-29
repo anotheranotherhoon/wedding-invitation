@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styled from "styled-components"
-import CardLayout from "./CardLayout"
+import CardLayout from "../CardLayout"
 
 interface IInvitationMessageProps {
   brid_dad : string;

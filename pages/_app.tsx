@@ -3,13 +3,19 @@ import { GlobalStyles } from '../styles/GlobalStyles'
 import '../css/main.css'
 import Head from 'next/head'
 
+
+declare global {
+  interface Window {
+    Kakao: any;
+  }
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
     <GlobalStyles />
     <Head>
-      <title>{'김현기❤️이향정'}</title>
-        <link rel='icon' href='/favicon.ico' />
+
     </Head>
       <Component {...pageProps} />
     </>

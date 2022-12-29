@@ -10,6 +10,7 @@
       "phoneNumber" : "010-0101-0101",
       "bank" : "우리은행",
       "accountNumber" : "1002-158-160138",
+      "kakaoPay" : "https://qr.kakaopay.com/281006011152811201008007",
       "rank" : "차남"
     },
     "brid" : {
@@ -17,6 +18,7 @@
       "phoneNumber" : "010-0202-0202",
       "bank" : "우리은행",
       "accountNumber" : "1002-756-018553",
+      "kakaoPay" : "https://qr.kakaopay.com/281006011152811201008007",
       "rank" : "장녀"
     }
   },

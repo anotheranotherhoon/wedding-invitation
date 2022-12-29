@@ -1,15 +1,20 @@
 import styled from "styled-components"
-import CardLayout from "./CardLayout"
+import CardLayout from "../CardLayout"
+import Image from "next/image"
 interface IInfoProps {
   date: string,
   time: string,
   place: string,
   hall_name: string
+  thumbNail : string
 }
 
-const Info = ({ date, time, place, hall_name }: IInfoProps) => {
+const Introduce = ({ date, time, place, hall_name, thumbNail }: IInfoProps) => {
   return (
     <CardLayout>
+      <AutoHeightImageWrapper>
+        <Image src={thumbNail} priority={true} layout='fill' className="autoImage" alt={'thumbNail'} />
+      </AutoHeightImageWrapper>
       <InfoWrapper>
         <StyledSection>
           <LeftSentence>
@@ -67,4 +72,18 @@ const RightBox = styled.section`
   }
 `
 
-export default Info
+const AutoHeightImageWrapper = styled.section`
+  width:100%;
+  position: relative;
+  & > span {
+    position : unset !important;
+    & .autoImage {
+      object-fit: contain !important;
+      position : relative !important;
+      height: auto !important
+    }
+  }
+`
+
+
+export default Introduce

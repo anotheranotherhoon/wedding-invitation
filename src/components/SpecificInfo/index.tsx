@@ -1,12 +1,12 @@
 import { Calendar } from "react-calendar";
 import styled from "styled-components"
-import { useModalMap } from "../hook/useModalMap";
-import CardLayout from "./CardLayout"
-import MapModal from './MapModal'
+import { useModalMap } from "../../hook/useModalMap";
+import CardLayout from "../CardLayout"
+import MapModal from '../MapModal'
 import moment from "moment";
 import 'react-calendar/dist/Calendar.css'
 import { useEffect, useState } from "react";
-import { isoToTimeStamp } from "../../utils/convertDate";
+import { isoToTimeStamp } from "../../../utils/convertDate";
 interface IProps {
   date: string;
   time : string;

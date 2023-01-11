@@ -6,20 +6,9 @@ import MapModal from '../MapModal'
 import 'react-calendar/dist/Calendar.css'
 import { useEffect, useState } from "react";
 import { diffDate, isoToTimeStamp } from "../../../utils/convertDate";
-interface IProps {
-  date: string;
-  time : string;
-  address: string;
-  bus: string;
-  subway: string;
-  parking: string;
-  place: string;
-  hall_name: string;
-  brid_name : string;
-  groom_name : string;
-}
+import type { ISpecificInfo } from "../../../types/interface";
 
-const SpecificInfo = ({ date, time, address, bus, subway, parking, place, hall_name, brid_name, groom_name }: IProps) => {
+const SpecificInfo = ({ date, time, address, bus, subway, parking, place, hall_name, brid_name, groom_name }: ISpecificInfo) => {
   const [hydrated, setHydrated] = useState<boolean>(false)
   const Ddate = new Date(date)
   const [ThayDay, setThatDay] = useState<number>(0)

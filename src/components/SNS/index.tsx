@@ -2,15 +2,9 @@ import { useEffect } from "react"
 import CardLayout from "../CardLayout"
 import KakaoTalkIcon from './KakaoTalkIcon'
 import {ShareButton} from './style'
+import type { ISNS } from "../../../types/interface"
 
-interface ISNS {
-  title: string;
-  description : string;
-  canonical : string;
-  img : string
-}
-
-const SNS = ({title, description, canonical, img} : ISNS) => {
+const SNS = ({title, description, img} : ISNS) => {
   useEffect(() => {
     window.Kakao.init(process.env.NEXT_PUBLIC_KAKAOMAP_KEY);
 }, []);

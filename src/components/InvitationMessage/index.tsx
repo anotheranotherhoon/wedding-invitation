@@ -1,21 +1,9 @@
 import Image from "next/image"
 import styled from "styled-components"
 import CardLayout from "../CardLayout"
-
-interface IInvitationMessageProps {
-  brid_dad : string;
-  brid_mom : string;
-  groom_dad : string;
-  groom_mom : string;
-  brid_name : string;
-  brid_rank : string;
-  groom_name : string;
-  groom_rank : string;
-  img : string;
-}
+import type { IInvitationMessageProps } from "../../../types/interface"
 
 const InvitationMessage = ({brid_dad, brid_mom, groom_dad, groom_mom, brid_name, groom_name, brid_rank, groom_rank, img} : IInvitationMessageProps) => {
-
   return(
     <CardLayout>
       <AutoHeightImageWrapper>

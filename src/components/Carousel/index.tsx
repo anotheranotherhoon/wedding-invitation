@@ -3,10 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Image from "next/image";
 import { IImg } from "../../../types/interface";
-
-interface ICarouselProps {
-  img : IImg[]
-}
+import type { ICarouselProps } from "../../../types/interface";
 
 const CarouselPage = ({ img } : ICarouselProps) => {
   return (

@@ -2,13 +2,7 @@ import styled from "styled-components"
 import CardLayout from "../CardLayout"
 import Image from "next/image"
 import { isoToTimeStamp } from "../../../utils/convertDate"
-interface IInfoProps {
-  date: string,
-  time: string,
-  place: string,
-  hall_name: string
-  thumbNail : string
-}
+import type { IInfoProps } from "../../../types/interface"
 
 const Introduce = ({ date, time, place, hall_name, thumbNail }: IInfoProps) => {
   return (

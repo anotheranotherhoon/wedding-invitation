@@ -49,3 +49,50 @@ export interface IImg {
   id: number;
   url: string;
 }
+
+export interface ICarouselProps {
+  img : IImg[]
+}
+
+export interface IInfoProps {
+  date: string,
+  time: string,
+  place: string,
+  hall_name: string
+  thumbNail : string
+}
+
+export interface IInvitationMessageProps {
+  brid_dad : string;
+  brid_mom : string;
+  groom_dad : string;
+  groom_mom : string;
+  brid_name : string;
+  brid_rank : string;
+  groom_name : string;
+  groom_rank : string;
+  img : string;
+}
+
+export interface IMapModalProps {
+  closeMapModal : () => void
+}
+
+export interface ISNS {
+  title: string;
+  description : string;
+  img : string
+}
+
+export interface ISpecificInfo {
+  date: string;
+  time : string;
+  address: string;
+  bus: string;
+  subway: string;
+  parking: string;
+  place: string;
+  hall_name: string;
+  brid_name : string;
+  groom_name : string;
+}

@@ -1,11 +1,7 @@
 import { useRef } from 'react';
 import styled from 'styled-components'
-import { useModalMap } from '../../hook/useModalMap';
 import KakaoMap from '../Map/KakaoMap';
-
-interface IMapModalProps {
-  closeMapModal : () => void
-}
+import type { IMapModalProps } from '../../../types/interface';
 
 const MapModal = ({closeMapModal} : IMapModalProps) => {
   const modalRef = useRef(null)

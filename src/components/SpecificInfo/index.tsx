@@ -22,12 +22,13 @@ interface IProps {
 const SpecificInfo = ({ date, time, address, bus, subway, parking, place, hall_name, brid_name, groom_name }: IProps) => {
   const [hydrated, setHydrated] = useState<boolean>(false)
   const Ddate = new Date(date)
-  const Dday= diffDate(date)
+  const [ThayDay, setThatDay] = useState<number>(0)
   const { isMapModalOpen, showMapModal, closeMapModal } = useModalMap()
   const DATE = isoToTimeStamp(date)
   useEffect(()=>{
     setHydrated(true)
-  },[])
+    setThatDay(diffDate(date))
+  },[date])
   if(!hydrated){
     return null
   }
@@ -51,7 +52,7 @@ const SpecificInfo = ({ date, time, address, bus, subway, parking, place, hall_n
             </CalendarContainer>
             <>
             <div>{DATE} {time}</div>
-            <div>{groom_name.slice(1)}♥{brid_name.slice(1)} 결혼식이 {Dday}일 남았습니다.</div>
+            <div>{groom_name.slice(1)}♥{brid_name.slice(1)} 결혼식이 {ThayDay}일 남았습니다.</div>
             </>
           </RightBox>
         </ContentBox>

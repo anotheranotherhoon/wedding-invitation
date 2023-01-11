@@ -55,7 +55,7 @@
   <img src="./images/img/dateWarning.png">
   <br/>
   구글링을 통해 <a href='https://string.tistory.com/32'>JavaScript Date객체</a>사용시 크로스 브라우징 이슈가 발생할 수 있음을 알게 되었다. <br/>
-  그래서 기존의 데이터를   "weddingDate" : "2023.01.15"에서 "weddingDate" : "2023/01/15" 로 바꾸니 크로스 브라우징 이슈가 해결되었다.
+  그래서 기존의 데이터를  <br/> "weddingDate" : "2023.01.15"에서 "weddingDate" : "2023/01/15" 로 바꾸니 크로스 브라우징 이슈가 해결되었다.
   
 </div>
 </details>

@@ -1,6 +1,6 @@
 import Layout from '../src/components/Layout'
 import Introduce from '../src/components/Introduce'
-// import SpecificInfo from '../src/components/SpecificInfo'
+import SpecificInfo from '../src/components/SpecificInfo'
 import AccountNumber from '../src/components/AccountNumber'
 import InvitationMessage from '../src/components/InvitationMessage'
 import Carousel from '../src/Carousel'
@@ -32,7 +32,7 @@ const Home = (props : IData) => {
       <Introduce date={props.weddingDate} time={props.time} place={props.place} hall_name={props.hall_name} thumbNail={props.img[0].url}/>
       <InvitationMessage brid_dad={props.parents_info.brid_parents.dad.name} brid_mom={props.parents_info.brid_parents.mom.name} groom_dad={props.parents_info.groom_parents.dad.name} groom_mom={props.parents_info.groom_parents.mom.name} brid_name={props.client.brid.name} groom_name={props.client.groom.name} brid_rank={props.client.brid.rank} groom_rank={props.client.groom.rank} />
       <Carousel img={props.img} />
-      {/* <SpecificInfo date={props.weddingDate} time={props.time} address={props.address} bus={props.bus} subway={props.subway} parking={props.parkingLot} place={props.place} hall_name={props.hall_name} brid_name={props.client.brid.name} groom_name={props.client.groom.name} /> */}
+      <SpecificInfo date={props.weddingDate} time={props.time} address={props.address} bus={props.bus} subway={props.subway} parking={props.parkingLot} place={props.place} hall_name={props.hall_name} brid_name={props.client.brid.name} groom_name={props.client.groom.name} />
       <AccountNumber
         brid_dad={props.parents_info.brid_parents.dad.name}
         brid_dad_bank={props.parents_info.brid_parents.dad.bank}

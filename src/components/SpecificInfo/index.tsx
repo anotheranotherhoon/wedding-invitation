@@ -3,10 +3,9 @@ import styled from "styled-components"
 import { useModalMap } from "../../hook/useModalMap";
 import CardLayout from "../CardLayout"
 import MapModal from '../MapModal'
-import moment from "moment";
 import 'react-calendar/dist/Calendar.css'
 import { useEffect, useState } from "react";
-import { isoToTimeStamp } from "../../../utils/convertDate";
+import { diffDate, isoToTimeStamp } from "../../../utils/convertDate";
 interface IProps {
   date: string;
   time : string;
@@ -23,6 +22,7 @@ interface IProps {
 const SpecificInfo = ({ date, time, address, bus, subway, parking, place, hall_name, brid_name, groom_name }: IProps) => {
   const [hydrated, setHydrated] = useState<boolean>(false)
   const Ddate = new Date(date)
+  const Dday= diffDate(date)
   const { isMapModalOpen, showMapModal, closeMapModal } = useModalMap()
   const DATE = isoToTimeStamp(date)
   useEffect(()=>{
@@ -51,7 +51,7 @@ const SpecificInfo = ({ date, time, address, bus, subway, parking, place, hall_n
             </CalendarContainer>
             <>
             <div>{DATE} {time}</div>
-            <div>{groom_name.slice(1)}♥{brid_name.slice(1)} 결혼식이 {moment(date).diff(moment(), 'days')}일 남았습니다.</div>
+            <div>{groom_name.slice(1)}♥{brid_name.slice(1)} 결혼식이 {Dday}일 남았습니다.</div>
             </>
           </RightBox>
         </ContentBox>

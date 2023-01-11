@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import CardLayout from "../CardLayout"
 import Image from "next/image"
+import { isoToTimeStamp } from "../../../utils/convertDate"
 interface IInfoProps {
   date: string,
   time: string,
@@ -13,12 +14,12 @@ const Introduce = ({ date, time, place, hall_name, thumbNail }: IInfoProps) => {
   return (
     <CardLayout>
       <AutoHeightImageWrapper>
-        <Image src={thumbNail} priority={true} layout='fill' className="autoImage" alt={'thumbNail'} />
+        <Image src={thumbNail} priority={true} layout='fill' className="autoImage" alt={'thumbNail'}  />
       </AutoHeightImageWrapper>
       <InfoWrapper>
         <StyledSection>
           <LeftSentence>
-            <div>{date}</div>
+            <div>{isoToTimeStamp(date)}</div>
             <div>{time}</div>
             <div>{place}</div>
             <div>{hall_name}</div>

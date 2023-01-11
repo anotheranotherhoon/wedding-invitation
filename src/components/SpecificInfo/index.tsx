@@ -4,7 +4,7 @@ import { useModalMap } from "../../hook/useModalMap";
 import CardLayout from "../CardLayout"
 import MapModal from '../MapModal'
 import 'react-calendar/dist/Calendar.css'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { diffDate, isoToTimeStamp } from "../../../utils/convertDate";
 interface IProps {
   date: string;
@@ -20,14 +20,14 @@ interface IProps {
 }
 
 const SpecificInfo = ({ date, time, address, bus, subway, parking, place, hall_name, brid_name, groom_name }: IProps) => {
-  //const [hydrated, setHydrated] = useState<boolean>(false)
+  const [hydrated, setHydrated] = useState<boolean>(false)
   const Ddate = new Date(date)
   const Dday= diffDate(date)
   const { isMapModalOpen, showMapModal, closeMapModal } = useModalMap()
   const DATE = isoToTimeStamp(date)
-  // useEffect(()=>{
-  //   setHydrated(true)
-  // },[])
+  useEffect(()=>{
+    setHydrated(true)
+  },[])
   if(!hydrated){
     return null
   }

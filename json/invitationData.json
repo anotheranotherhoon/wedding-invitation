@@ -1,12 +1,12 @@
 {
   "seo" : {
-    "title" : "김현기❤️이향정 결혼합니다.",
+    "title" : "김신랑❤️이신부 결혼합니다.",
     "description" : "1월 15일 일요일 오후 2시 30분",
     "url" : "https://wedding-invitation-alpha-three.vercel.app/"
   },
   "client" : {
     "groom" : {
-      "name" :  "김현기",
+      "name" :  "김신랑",
       "phoneNumber" : "010-0101-0101",
       "bank" : "우리은행",
       "accountNumber" : "1002-158-160138",
@@ -14,7 +14,7 @@
       "rank" : "차남"
     },
     "brid" : {
-      "name" :  "이향정",
+      "name" :  "이신부",
       "phoneNumber" : "010-0202-0202",
       "bank" : "우리은행",
       "accountNumber" : "1002-756-018553",
@@ -33,13 +33,13 @@
   "parents_info" :{
     "groom_parents" : {
       "dad" : {
-        "name" : "김영식",
+        "name" : "랑아빠",
         "phoneNumber" : "010-0000-0000",
         "bank" : "농협",
         "accountNumber" : "351-0216-9231-83"
       },
       "mom" : {
-        "name" : "이연화",
+        "name" : "랑엄마",
         "phoneNumber" : "010-1111-1111",
         "bank" : "부산은행",
         "accountNumber" : "302-5555-5555 -55"
@@ -48,13 +48,13 @@
     ,
     "brid_parents" : {
       "dad" : {
-        "name" : "이학규",
+        "name" : "부아빠",
         "phoneNumber" : "010-2222-2222",
         "bank" : "경남은행",
         "accountNumber" : "625-21-0054580"
       },
       "mom" : {
-        "name" : "이은주",
+        "name" : "부엄마",
         "phoneNumber" : "010-3333-3333",
         "bank" : "경남은행",
         "accountNumber" : "625-21-0073376"

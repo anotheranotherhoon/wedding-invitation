@@ -30,7 +30,7 @@ const Home = (props : IData) => {
       }}
       />
       <Introduce date={props.weddingDate} time={props.time} place={props.place} hall_name={props.hall_name} thumbNail={props.img[0].url}/>
-      <InvitationMessage brid_dad={props.parents_info.brid_parents.dad.name} brid_mom={props.parents_info.brid_parents.mom.name} groom_dad={props.parents_info.groom_parents.dad.name} groom_mom={props.parents_info.groom_parents.mom.name} brid_name={props.client.brid.name} groom_name={props.client.groom.name} brid_rank={props.client.brid.rank} groom_rank={props.client.groom.rank} />
+      <InvitationMessage brid_dad={props.parents_info.brid_parents.dad.name} brid_mom={props.parents_info.brid_parents.mom.name} groom_dad={props.parents_info.groom_parents.dad.name} groom_mom={props.parents_info.groom_parents.mom.name} brid_name={props.client.brid.name} groom_name={props.client.groom.name} brid_rank={props.client.brid.rank} groom_rank={props.client.groom.rank} img={props.img[1].url}/>
       <Carousel img={props.img} />
       <SpecificInfo date={props.weddingDate} time={props.time} address={props.address} bus={props.bus} subway={props.subway} parking={props.parkingLot} place={props.place} hall_name={props.hall_name} brid_name={props.client.brid.name} groom_name={props.client.groom.name} />
       <AccountNumber
@@ -52,7 +52,7 @@ const Home = (props : IData) => {
         groom_bank={props.client.groom.bank}
         groom_accountNumber={props.client.groom.accountNumber}
         groom_kakaoPay={props.client.groom.kakaoPay}
-        img={props.img[1].url}
+        img={props.img[2].url}
       />
     </Layout>
   )

@@ -4,7 +4,12 @@ export const useModal = () => {
   const [bankState, setBankState] = useState<string>('')
   const [accountNumberState, setAccountNumberState] = useState<string>('')
   const [nameState, setNameState] = useState<string>('')
-  const showModal = (bank : string, accountNumber : string, name : string) => {
+  
+  interface IShowModal {
+    (bank : string, accountNumber : string, name : string) : void
+  }
+
+  const showModal : IShowModal = (bank, accountNumber, name) => {
     setBankState(bank)
     setAccountNumberState(accountNumber)
     setNameState(name);

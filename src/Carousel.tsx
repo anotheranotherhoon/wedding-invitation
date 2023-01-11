@@ -13,7 +13,7 @@ const CarouselPage = ({ img } : ICarouselProps) => {
     <CardLayout>
       <Carousel showThumbs={false}>
         {img.map((el : IImg)=>
-          <Image key={el.id} src={el.url} width={400} height={525} alt={`${el.id}`}/>
+          <Image key={el.id} src={el.url} width={400} height={525} alt={`${el.id}`} />
         )}
       </Carousel>
 

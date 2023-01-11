@@ -1,7 +1,6 @@
 import type { AppProps } from 'next/app'
 import { GlobalStyles } from '../styles/GlobalStyles'
 import '../css/main.css'
-import Head from 'next/head'
 
 
 declare global {
@@ -14,9 +13,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
     <GlobalStyles />
-    <Head>
-
-    </Head>
       <Component {...pageProps} />
     </>
   )

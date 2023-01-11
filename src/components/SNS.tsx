@@ -1,21 +1,44 @@
 import { useEffect } from "react"
-import KaKaoShareButton from './KaKaoShareButton'
 import CardLayout from "./CardLayout"
 
-const SNS = () => {
+interface ISNS {
+  title: string;
+  description : string;
+  canonical : string;
+  img : string
+}
+
+const SNS = ({title, description, canonical, img} : ISNS) => {
   useEffect(() => {
-    const script = document.createElement('script')
-    script.src = `https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js`
-    script.async = true
-    document.body.appendChild(script)
-    return () => {
-      document.body.removeChild(script)
-    }
-  }, [])
+    window.Kakao.init(process.env.NEXT_PUBLIC_KAKAOMAP_KEY);
+}, []);
+  const onClick = () => {
+    const { Kakao, location } = window;
+    Kakao.Link.sendDefault({
+      objectType: "feed",
+      content: {
+        title: title,
+        description: description,
+        imageUrl: img,
+        link: {
+          mobileWebUrl: location.href,
+          webUrl: location.href,
+        },
+      },
+      buttons: [
+        {
+          title: "웹으로 보기",
+          link: {
+            mobileWebUrl: location.href,
+            webUrl: location.href,
+          },
+        },
+      ],
+    });
+  };
   return (
     <CardLayout>
-      <div>카카오톡 공유하기</div>
-      <KaKaoShareButton />
+      <div onClick={onClick}>카카오톡 공유하기</div>
     </CardLayout>
   )
 }

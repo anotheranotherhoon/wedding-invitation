@@ -9,6 +9,7 @@ import path from 'path';
 import { promises as fs } from 'fs';
 import type {IData} from '../types/interface'
 import Head from 'next/head'
+import SNS from '../src/components/SNS'
 const Home = (props : IData) => {
   
   return (
@@ -54,6 +55,7 @@ const Home = (props : IData) => {
         groom_kakaoPay={props.client.groom.kakaoPay}
         img={props.img[2].url}
       />
+      <SNS title={props.seo.title} description={props.seo.description} canonical={props.seo.url} img={props.img[0].url}/>
     </Layout>
   )
 }

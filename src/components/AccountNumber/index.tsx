@@ -32,7 +32,7 @@ const AccountNumber = ({ brid_dad, brid_dad_bank, brid_dad_accountNumber, brid_m
   return (
     <CardLayout>
       <AutoHeightImageWrapper>
-        <Image src={img} layout='fill' className="autoImage" alt={'흑백'} />
+        <Image src={img} layout='fill' className="autoImage" alt={'흑백'} priority={true} />
       </AutoHeightImageWrapper>
       <InfoWrapper>
         <ContentBox>

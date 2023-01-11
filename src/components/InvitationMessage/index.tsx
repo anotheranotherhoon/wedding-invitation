@@ -11,14 +11,15 @@ interface IInvitationMessageProps {
   brid_rank : string;
   groom_name : string;
   groom_rank : string;
+  img : string;
 }
 
-const InvitationMessage = ({brid_dad, brid_mom, groom_dad, groom_mom, brid_name, groom_name, brid_rank, groom_rank} : IInvitationMessageProps) => {
+const InvitationMessage = ({brid_dad, brid_mom, groom_dad, groom_mom, brid_name, groom_name, brid_rank, groom_rank, img} : IInvitationMessageProps) => {
 
   return(
     <CardLayout>
       <AutoHeightImageWrapper>
-      <Image src={'http://m.bomtvcard.com/data/1662021003952/crop_A_221027_212856_69538100WEI3i7.jpg'} layout='fill' className="autoImage" alt={'흑백'} />
+      <Image src={img} layout='fill' className="autoImage" alt={'흑백'} priority={true} />
       </AutoHeightImageWrapper>
       <StyledSection>
       <div>어색했던 첫 만남을 또렷이 기억합니다.</div>

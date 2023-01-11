@@ -1,8 +1,8 @@
-import CardLayout from "./components/CardLayout";
+import CardLayout from "../CardLayout";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Image from "next/image";
-import { IImg } from "../types/interface";
+import { IImg } from "../../../types/interface";
 
 interface ICarouselProps {
   img : IImg[]

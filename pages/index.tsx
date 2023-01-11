@@ -3,7 +3,7 @@ import Introduce from '../src/components/Introduce'
 import SpecificInfo from '../src/components/SpecificInfo'
 import AccountNumber from '../src/components/AccountNumber'
 import InvitationMessage from '../src/components/InvitationMessage'
-import Carousel from '../src/Carousel'
+import Carousel from '../src/components/Carousel'
 import { NextSeo } from 'next-seo'
 import path from 'path';
 import { promises as fs } from 'fs';

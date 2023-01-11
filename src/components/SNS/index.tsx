@@ -1,5 +1,7 @@
 import { useEffect } from "react"
-import CardLayout from "./CardLayout"
+import CardLayout from "../CardLayout"
+import KakaoTalkIcon from './KakaoTalkIcon'
+import {ShareButton} from './style'
 
 interface ISNS {
   title: string;
@@ -38,9 +40,14 @@ const SNS = ({title, description, canonical, img} : ISNS) => {
   };
   return (
     <CardLayout>
-      <div onClick={onClick}>카카오톡 공유하기</div>
+      <ShareButton onClick={onClick}>
+        <KakaoTalkIcon/>
+        <div>카카오톡 공유하기</div>
+        </ShareButton>
     </CardLayout>
   )
 }
+
+
 
 export default SNS

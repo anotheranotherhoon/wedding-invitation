@@ -39,6 +39,29 @@
   <br>
 </p>
 
+
+## 마주했으나 끝내 극복한 에러
+<details>
+<summary>iOS환경에서만 렌더링이 되지 않았던 이슈</summary>
+<div markdown="1">
+  내가 사용하는 맥북과 android 모바일 환경에서는 잘 렌더링 되었다.<br/>
+  하지만 친구들에게 공유하면서 아이폰, 아이패드 (iOS환경)에서는 아래와 같은 에러가 발생하였다.
+  <img src="./images/img/iOSerror.jpeg">
+  <br/>
+  see the browser console for more information에서 힌트를 얻을 수 있을 것 같았고,<br/> 모바일 환경에서 개발자 도구 및 console의 메세지를 확인 할 수 있는 방법을 알아냈다. 그리고 invalidDate 에러를 확인 할 수 있었다.
+  <img src="./images/img/invalidDate.png">
+  <br/>
+  그리고 웹 브라우저 console에서도 비슷한 에러를 발견했다.
+  <img src="./images/img/dateWarning.png">
+  <br/>
+  구글링을 통해 <a href='https://string.tistory.com/32'>JavaScript Date객체</a>사용시 크로스 브라우징 이슈가 발생할 수 있음을 알게 되었다. <br/>
+  그래서 기존의 데이터를   "weddingDate" : "2023.01.15"에서 "weddingDate" : "2023/01/15" 로 바꾸니 크로스 브라우징 이슈가 해결되었다.
+  
+</div>
+</details>
+
+
+
 ##  **🌱 commit message 규칙**
 
 <details>

@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { diffDate, isoToTimeStamp } from "../../../utils/convertDate";
 import type { ISpecificInfo } from "../../../types/interface";
 
-const SpecificInfo = ({ date, time, address, bus, subway, parking, place, hall_name, brid_name, groom_name }: ISpecificInfo) => {
+const SpecificInfo = ({ date, time, address, bus, subway, parking, place, hall_name, brid_name, groom_name, lat, lng }: ISpecificInfo) => {
   const [hydrated, setHydrated] = useState<boolean>(false)
   const Ddate = new Date(date)
   const [ThayDay, setThatDay] = useState<number>(0)
@@ -67,7 +67,7 @@ const SpecificInfo = ({ date, time, address, bus, subway, parking, place, hall_n
           <RightBox>{parking}</RightBox>
         </ContentBox>
       </InfoWrapper>
-      {isMapModalOpen && <MapModal closeMapModal={closeMapModal} />}
+      {isMapModalOpen && <MapModal closeMapModal={closeMapModal} lat={lat} lng={lng} place={place}/>}
     </CardLayout>
   )
 }

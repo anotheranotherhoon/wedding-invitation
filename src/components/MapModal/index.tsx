@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import KakaoMap from '../Map/KakaoMap';
 import type { IMapModalProps } from '../../../types/interface';
 
-const MapModal = ({closeMapModal} : IMapModalProps) => {
+const MapModal = ({closeMapModal, lat, lng, place} : IMapModalProps) => {
   const modalRef = useRef(null)
   const cllickBackground = (e: React.MouseEvent<HTMLDivElement>) => {
     if (modalRef.current === e.target) {
@@ -20,7 +20,7 @@ const MapModal = ({closeMapModal} : IMapModalProps) => {
           <div><a href='https://m.place.naver.com/place/13103771/location?subtab=location'>네이버 지도 바로가기</a></div>
           <div><a href='https://m.map.kakao.com/actions/searchView?q=%EC%88%98%EC%9B%90%ED%8C%8C%ED%8B%B0%EC%9B%A8%EB%94%A9%EC%9C%A0&wxEnc=LVSOTP&wyEnc=QNLTTMN&lvl=4'>카카오 지도 바로가기</a></div>
         </MapSection>
-      <KakaoMap/>
+      <KakaoMap lat={lat} lng={lng} place={place}/>
       </div>
     </ModalBox>
   </Container>

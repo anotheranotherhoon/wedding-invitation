@@ -5,6 +5,8 @@ export interface IData {
   weddingDate: string;
   time: string;
   place: string;
+  lat : number;
+  lng : number;
   hall_name: string;
   address: string;
   subway: string
@@ -76,6 +78,9 @@ export interface IInvitationMessageProps {
 
 export interface IMapModalProps {
   closeMapModal : () => void
+  lat : number;
+  lng : number;
+  place : string
 }
 
 export interface ISNS {
@@ -95,4 +100,12 @@ export interface ISpecificInfo {
   hall_name: string;
   brid_name : string;
   groom_name : string;
+  lat : number;
+  lng : number
+}
+
+export interface IKakaoMap {
+  lat : number;
+  lng : number;
+  place : string;
 }

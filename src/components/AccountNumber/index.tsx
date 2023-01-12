@@ -72,7 +72,7 @@ const AccountNumber = ({ brid_dad, brid_dad_bank, brid_dad_accountNumber, brid_m
                 <KakaoBox><a href={brid_kakaoPay}>카카오페이</a></KakaoBox>
               </BoxWrapper>
             </div>
-            <div className="side role">신랑측 혼주</div>
+            <div className="side role">신부측 혼주</div>
             <div>
               <span className="role">아버지 </span>
               <span>{brid_dad}</span>

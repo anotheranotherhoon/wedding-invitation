@@ -32,7 +32,6 @@ const Modal = ({ bankState, accountNumberState, nameState, closeModal }: IModalP
       if (!document.queryCommandSupported("copy")) {
         return alert("복사하기가 지원되지 않는 브라우저입니다.");
       }
-      window.alert('hello')
       const textarea = document.createElement("textarea");
       textarea.value = accountNumberState;
       textarea.style.left = "-999999px";
@@ -41,11 +40,9 @@ const Modal = ({ bankState, accountNumberState, nameState, closeModal }: IModalP
       document.body.appendChild(textarea);
       textarea.focus();
       textarea.select();
-      return new Promise((res :any, rej : any) => {
-        copyAccountNumber()
-        document.execCommand("copy") ? res() : rej()
-        textarea.remove()
-      })
+      copyAccountNumber()
+      document.execCommand("copy")
+      document.body.removeChild(textarea);
     }
   };
 

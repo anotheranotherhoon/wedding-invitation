@@ -8,7 +8,7 @@ const SNS = ({title, description, img} : ISNS) => {
   useEffect(() => {
     window.Kakao.init(process.env.NEXT_PUBLIC_KAKAOMAP_KEY);
 }, []);
-  const onClick = () => {
+  const kakaoTalkShare = () => {
     const { Kakao, location } = window;
     Kakao.Link.sendDefault({
       objectType: "feed",
@@ -34,7 +34,7 @@ const SNS = ({title, description, img} : ISNS) => {
   };
   return (
     <CardLayout>
-      <ShareButton onClick={onClick}>
+      <ShareButton onClick={kakaoTalkShare}>
         <KakaoTalkIcon/>
         <div>카카오톡 공유하기</div>
         </ShareButton>

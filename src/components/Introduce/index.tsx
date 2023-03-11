@@ -8,7 +8,7 @@ const Introduce = ({ date, time, place, hall_name, thumbNail }: IInfoProps) => {
   return (
     <CardLayout>
       <AutoHeightImageWrapper>
-        <Image src={thumbNail} priority={true} layout='fill' className="autoImage" alt={'thumbNail'}  />
+        <Image src={thumbNail} priority={true} width={400} height={525} className="autoImage" alt={'thumbNail'}  />
       </AutoHeightImageWrapper>
       <InfoWrapper>
         <StyledSection>
@@ -68,16 +68,6 @@ const RightBox = styled.section`
 `
 
 const AutoHeightImageWrapper = styled.section`
-  width:100%;
-  position: relative;
-  & > span {
-    position : unset !important;
-    & .autoImage {
-      object-fit: contain !important;
-      position : relative !important;
-      height: auto !important
-    }
-  }
 `
 
 

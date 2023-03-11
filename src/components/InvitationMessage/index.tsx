@@ -7,7 +7,7 @@ const InvitationMessage = ({brid_dad, brid_mom, groom_dad, groom_mom, brid_name,
   return(
     <CardLayout>
       <AutoHeightImageWrapper>
-      <Image src={img} layout='fill' className="autoImage" alt={'흑백'} priority={true} />
+      <Image src={img} width={400} height={525} className="autoImage" alt={'흑백'} priority={true} />
       </AutoHeightImageWrapper>
       <StyledSection>
       <div>어색했던 첫 만남을 또렷이 기억합니다.</div>

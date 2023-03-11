@@ -31,16 +31,7 @@ const InvitationMessage = ({brid_dad, brid_mom, groom_dad, groom_mom, brid_name,
 }
 
 const AutoHeightImageWrapper = styled.section`
-  width:100%;
-  position: relative;
-  & > span {
-    position : unset !important;
-    & .autoImage {
-      object-fit: contain !important;
-      position : relative !important;
-      height: auto !important
-    }
-  }
+
 `
 const StyledSection = styled.section`
   margin : 10px 0;

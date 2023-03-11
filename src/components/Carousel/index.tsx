@@ -10,7 +10,7 @@ const CarouselPage = ({ img } : ICarouselProps) => {
     <CardLayout>
       <Carousel showThumbs={false}>
         {img.map((el : IImg)=>
-          <Image key={el.id} src={el.url} width={400} height={525} alt={`${el.id}`} priority={true} />
+          <Image key={el.id} src={el.url} width={400} height={525} alt={`${el.id}`} priority={true} placeholder="blur" blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="  />
         )}
       </Carousel>
 

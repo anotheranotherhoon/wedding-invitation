@@ -8,7 +8,7 @@ const Introduce = ({ date, time, place, hall_name, thumbNail }: IInfoProps) => {
   return (
     <CardLayout>
       <AutoHeightImageWrapper>
-        <Image src={thumbNail} priority={true} width={400} height={525} className="autoImage" alt={'thumbNail'}  />
+        <Image src={thumbNail} priority={true} width={400} height={525} className="autoImage" alt={'thumbNail'}  placeholder="blur"  blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==" />
       </AutoHeightImageWrapper>
       <InfoWrapper>
         <StyledSection>

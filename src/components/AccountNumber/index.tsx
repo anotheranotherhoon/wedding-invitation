@@ -32,7 +32,7 @@ const AccountNumber = ({ brid_dad, brid_dad_bank, brid_dad_accountNumber, brid_m
   return (
     <CardLayout>
       <AutoHeightImageWrapper>
-        <Image src={img} width={400} height={525}   className="autoImage" alt={'흑백'} priority={true} />
+        <Image src={img} width={400} height={525}   className="autoImage" alt={'흑백'} priority={true} placeholder="blur"  blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==" />
       </AutoHeightImageWrapper>
       <InfoWrapper>
         <ContentBox>

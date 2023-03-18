@@ -31,7 +31,6 @@ const getGuestBook = async(req : NextApiRequest, res : NextApiResponse<GuestBook
         message : req.body.message
       }
       const insertedId = await addGuestBookMessage(message)
-      res.revalidate('/guestBook');
       res.status(200).json(insertedId)
     }else{
       res.status(400).json({'error' : 'name and message are required '})

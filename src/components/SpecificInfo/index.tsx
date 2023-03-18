@@ -97,13 +97,13 @@ const RightBox = styled.div`
     padding: 6px 0;
   }
   .modal{
+    cursor: pointer;
     width:100%;
     color : var(--color-white);
     background-color:#524344;
     border-radius: 9px;
     padding: 6px;
     text-align:center;
-    cursor: pointer;
   }
 `
 export const CalendarContainer = styled.div`

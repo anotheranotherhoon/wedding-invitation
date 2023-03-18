@@ -1,4 +1,3 @@
-import styled from "styled-components"
 import CardLayout from "../CardLayout"
 import Image from "next/image"
 import { useModal } from "../../hook/useModal";

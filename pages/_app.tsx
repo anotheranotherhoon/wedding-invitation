@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import { GlobalStyles } from '../styles/GlobalStyles'
+import { DehydratedState, Hydrate, QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import '../css/main.css'
 
 
@@ -9,12 +10,15 @@ declare global {
   }
 }
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps<{dehydratedState: DehydratedState}>) {
+  const queryClient = new QueryClient()
   return (
-    <>
-    <GlobalStyles />
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps.dehydratedState}>
+      <GlobalStyles />
       <Component {...pageProps} />
-    </>
+      </Hydrate>
+    </QueryClientProvider>
   )
 }
 

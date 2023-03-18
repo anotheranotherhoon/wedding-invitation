@@ -1,4 +1,12 @@
+import { ObjectId } from "mongodb"
+import {DehydratedState } from "@tanstack/react-query"
+
 export interface IData {
+  weddingData : WeddingData;
+  dehydratedState : DehydratedState
+}
+
+interface WeddingData{
   seo : ISeo;
   client: IClient;
   brid: object;
@@ -15,6 +23,17 @@ export interface IData {
   parents_info: IParensInfo;
   img: IImg[];
 }
+
+export interface GuestBookData {
+  _id : ObjectId;
+  name : string;
+  message : string
+}
+
+export interface GuestBookDataProps {
+  guestBookData : GuestBookData[]
+}
+
 interface ISeo {
   title : string;
   description : string;
@@ -108,4 +127,9 @@ export interface IKakaoMap {
   lat : number;
   lng : number;
   place : string;
+}
+
+export interface GuestBookInput{
+  name : string;
+  message : string
 }

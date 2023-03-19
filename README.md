@@ -10,6 +10,12 @@
   <br>
 </p>
 
+### mongoDB Atlas를 사용하여 구현한 방명록
+<p align="center">
+  <br>
+  <img src="./images/gif/guestBook.gif">
+  <br>
+</p>
 
 ### 카카오톡 SEO
 <p align="center">
@@ -62,6 +68,7 @@
 
 
 
+
 ##  **🌱 commit message 규칙**
 
 <details>
@@ -103,7 +110,7 @@
 -  react-kakao-maps-sdk
 - react-responsive-carousel
 - react-calendar
-
+- mongoDB
 
 </div>
 </details>

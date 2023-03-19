@@ -1,10 +1,7 @@
 import { ObjectId } from "mongodb"
-import {DehydratedState } from "@tanstack/react-query"
 
 export interface IData {
   weddingData : WeddingData;
-  // dehydratedState : any
-  // dehydratedState : DehydratedState
 }
 
 interface WeddingData{

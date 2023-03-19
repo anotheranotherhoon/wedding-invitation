@@ -3,7 +3,8 @@ import {DehydratedState } from "@tanstack/react-query"
 
 export interface IData {
   weddingData : WeddingData;
-  dehydratedState : DehydratedState
+  // dehydratedState : any
+  // dehydratedState : DehydratedState
 }
 
 interface WeddingData{

@@ -3,9 +3,13 @@ import { ObjectId } from "mongodb";
 import type {GuestBookInput} from "../../types/interface"
 
 export const fetchGuestBook = async()  => {
-  const {data} =  await axios.get('/api/guestBook')
-  const {guestBookData} = data
-  return guestBookData
+  try {
+    const {data} =  await axios.get('/api/guestBook')
+    const guestBookData = data.guestBookData
+    return guestBookData
+  } catch (error) {
+    return console.log(error,'here')
+  }
 }
 
 export const registerMessage = async(data : GuestBookInput)=> {

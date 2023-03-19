@@ -12,7 +12,6 @@ import type {IData} from '../types/interface'
 import Head from 'next/head'
 import SNS from '../src/components/SNS'
 import React, { useEffect, useState } from 'react'
-import {getGuestBookMessage} from './api/guestBook/index'
 import { dehydrate, QueryClient } from '@tanstack/react-query'
 import { fetchGuestBook } from '../src/api/api'
 const Home = (props : IData) => {
@@ -81,12 +80,11 @@ export const getStaticProps = async() => {
   const fileContents = await fs.readFile(jsonDirectory + '/invitationData.json', 'utf8');
   const weddingData = JSON.parse(fileContents)
   const queryClient = new QueryClient()
-  await queryClient.prefetchQuery(['guestBook'], fetchGuestBook)
-  const guestBookData = await getGuestBookMessage()
+  // await queryClient.prefetchQuery(["guestBook"], fetchGuestBook)
   return {
     props : {
       weddingData,
-      dehydratedState : dehydrate(queryClient)
+      // dehydratedState: dehydrate(queryClient)
     }
   }
 }

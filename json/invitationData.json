@@ -9,7 +9,7 @@
       "name" :  "김신랑",
       "phoneNumber" : "010-0101-0101",
       "bank" : "우리은행",
-      "accountNumber" : "1002-158-160138",
+      "accountNumber" : "0000-0000-0000",
       "kakaoPay" : "https://qr.kakaopay.com/281006011152811201008007",
       "rank" : "차남"
     },
@@ -17,7 +17,7 @@
       "name" :  "이신부",
       "phoneNumber" : "010-0202-0202",
       "bank" : "우리은행",
-      "accountNumber" : "1002-756-018553",
+      "accountNumber" : "0000-0000-0000",
       "kakaoPay" : "https://qr.kakaopay.com/281006011152811201008007",
       "rank" : "장녀"
     }
@@ -38,13 +38,13 @@
         "name" : "랑아빠",
         "phoneNumber" : "010-0000-0000",
         "bank" : "농협",
-        "accountNumber" : "351-0216-9231-83"
+        "accountNumber" : "0000-0000-0000-0000"
       },
       "mom" : {
         "name" : "랑엄마",
         "phoneNumber" : "010-1111-1111",
         "bank" : "부산은행",
-        "accountNumber" : "302-5555-5555 -55"
+        "accountNumber" : "0000-0000-0000 -0000"
       }
     }
     ,
@@ -59,7 +59,7 @@
         "name" : "부엄마",
         "phoneNumber" : "010-3333-3333",
         "bank" : "경남은행",
-        "accountNumber" : "625-21-0073376"
+        "accountNumber" : "0000-0000-0000"
       }
     }    
   },

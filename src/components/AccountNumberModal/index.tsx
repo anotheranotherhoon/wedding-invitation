@@ -41,18 +41,6 @@ const Modal = ({ bankState, accountNumberState, nameState, closeModal }: IModalP
       document.execCommand("copy")
       document.body.removeChild(textarea);
     }
-
-    const textarea = document.createElement("textarea");
-    textarea.value = accountNumberState;
-    textarea.style.left = "-999999px";
-    textarea.style.top = "-999999px";
-    textarea.style.position = "fixed";
-    document.body.appendChild(textarea);
-    textarea.focus();
-    textarea.select();
-    copyAccountNumber()
-    document.execCommand("copy")
-    document.body.removeChild(textarea);
   };
 
   return (
